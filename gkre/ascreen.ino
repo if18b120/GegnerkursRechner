@@ -1,3 +1,5 @@
+
+
 void writeFloatToDisplay(int display, float value, bool leftBound) 
 {
   if (value > 99.9) value = 99.9;
@@ -6,6 +8,7 @@ void writeFloatToDisplay(int display, float value, bool leftBound)
 
   int offset = fillBlanks(display, leftBound);
 
+  int index = 0;
   do 
   {
     int digit = num % 10;
@@ -22,11 +25,12 @@ void writeNumberToDisplay(int display, int value, bool leftBound)
 
   int offset = fillBlanks(display, leftBound);
   
+  int index = 0;
   do 
   {
     int digit = value % 10;
     value /= 10;
-    lc.setDigit(display, offset + index, digit);
+    lc.setDigit(display, offset + index, digit, false);
     index++;
   } while (value > 0);
 }

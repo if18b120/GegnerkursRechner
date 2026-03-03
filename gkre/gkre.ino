@@ -1,10 +1,30 @@
 #include "LedControl.h"
 
-
 #define DISPLAY_COUNT 5
 #define SAVECOUNT 10
 
-LedControl lc = LedControl(14, 16, 15, DISPLAY_COUNT);
+//clk white 14
+//cs green 15
+//din yellow 16
+
+LedControl lc = LedControl(16, 14, 15, DISPLAY_COUNT);
+
+enum PIN
+{
+    D0,
+    D1,
+    D2,
+    D3,
+    D4,
+    D5,
+    D6,
+    D7,
+    D8,
+    D9,
+    D10,
+    D11,
+    D12
+};
 
 struct State 
 {
